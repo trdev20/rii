@@ -1,6 +1,6 @@
 {
   "name": "@trdev20/rii-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to remove files and folders recursively, forcefully and permanently.",
   "main": "dist/index.js",
   "bin": {
