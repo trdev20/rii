@@ -1,0 +1,4 @@
+node_modules
+dist
+.github/workflows
+.pnpm-store

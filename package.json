@@ -1,0 +1,57 @@
+{
+  "name": "@trdev20/rii-cli",
+  "version": "1.0.0",
+  "description": "CLI to remove files and folders recursively, forcefully and permanently.",
+  "main": "dist/index.js",
+  "bin": {
+    "rii": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/*.map",
+    "package.json",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md"
+  ],
+  "author": "Taib Rabah",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trdev20/rii-cli.git"
+  },
+  "homepage": "https://github.com/trdev20/rii-cli#readme",
+  "bugs": "https://github.com/trdev20/rii-cli/issues",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "remove",
+    "delete",
+    "files",
+    "folders",
+    "forcefully",
+    "recursively",
+    "permanently"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "format": "prettier --write .",
+    "build": "tsup",
+    "dev:ts": "tsup --watch",
+    "dev:js": "node --watch dist/index.js",
+    "publish-pkg": "pnpm build && pnpm changeset publish"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@types/node": "^22.13.1",
+    "prettier": "^3.5.0",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}

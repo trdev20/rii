@@ -1,0 +1,21 @@
+name: Format Code
+run-name: Format Code
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  format:
+    uses: trdev20-actions/workflows/.github/workflows/format.yml@v2
+
+    if: ${{ ! contains(github.event.head_commit.message, '[no format]') && ! contains(github.event.head_commit.message, '[skip format]') }}
+    
+    with:
+      check-format: pnpm prettier --check . --ignore-path .ci.prettierignore
+      format: pnpm prettier --write . --ignore-path .ci.prettierignore
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
